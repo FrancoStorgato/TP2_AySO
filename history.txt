@@ -1,0 +1,107 @@
+
+   32  man history
+   33  lsblk
+   34  sudo cfdisk /dev/sdb
+   35  sudo fdisk /dev/sdb
+   36  lsblk
+   37  sudo fdisk /dev/sdb
+   38  lsblk
+   39  sudo fdisk /dev/sdc
+   40  lsblk
+   41  sudo cfdisk /dev/sdb
+   42  sudo cfdisk /dev/sdc
+   43  sudo cfdisk /dev/sdb
+   44  lsblk
+   45  sudo fdisk /dev/sdd
+   46  lsblk
+   47  sudo pvcreate /dev/sdb1
+   48  sudo pvcreate /dev/sdc1
+   49  sudo pvcreate /dev/sdd1
+   50  sudo vgcreate nodocentral /dev/sdb1 /dev/sdc1 /dev/sdd1
+   51  sudo lvcreate -L 3G -n sitios nodocentral
+   52  lsblk
+   53  sudo lvcreate -L 5G -n salvas nodocentral
+   54  sudo lvcreate -L 4998MB -n salvas nodocentral
+   55  lsblk
+   56  sudo fdisk -l
+   57  sudo mkfs.ext4 /dev/nodocentral/sitios 
+   58  sudo mkfs.ext4 /dev/nodocentral/salvas 
+   59  pwd
+   60  cd /
+   61  ls -l
+   62  mkdir -p /mnt/{sitios,salvas}
+   63  sudo mkdir -p /mnt/{sitios,salvas}
+   64  cd /mnt
+   65  ls -l
+   66  sudo mount /dev/nodocentral/sitios /mnt/sitios/
+   67  sudo mount /dev/nodocentral/salvas /mnt/salvas/
+   68  lsblk
+   69  sudo fdisk /dev/sdb
+   70  sudo umount /dev/nodocentral/sitios
+   71  sudo umount /dev/nodocentral/salvas
+   72  lsblk
+   73  sudo fdisk /dev/sdb
+   74  sudo umount /dev/sdb1
+   75  sudo umount /dev/sdb
+   76  sudo umount /dev/sdc
+   77  sudo umount /dev/sdc1
+   78  sudo umount /dev/sdd
+   79  sudo umount /dev/sdd1
+   80  sudo fdisk /dev/sdb
+   81  sudo cfdisk /dev/sdb
+   82  lsblk
+   83  sudo pvcreate /dev/sdb2
+   84  sudo vgextend nodocentral /dev/sdb2
+   85  sudo lvextend -L +1G /dev/nodocentral/sitios
+   86  lsblk
+   87  sudo mkfs.ext4 /dev/nodocentral/sitios 
+   88  sudo mount /dev/nodocentral/sitios /mnt/sitios/
+   89  sudo mount /dev/nodocentral/salvas /mnt/salvas/
+   90  lsblk
+   91  echo ¨Archivo de prueba¨ > /mnt/sitios/prueba.txt
+   92  sudo echo ¨Archivo de prueba¨ > /mnt/sitios/prueba.txt
+   93  tree
+   94  ls -l
+   95  sudo chmod 777 sitios
+   96  ls -l
+   97  sudo echo ¨Archivo de prueba¨ > /mnt/sitios/prueba.txt
+   98  tree
+   99  sudo umount /dev/nodocentral/salvas /mnt/salvas/
+  100  sudo umount /dev/nodocentral/salvas
+  101  lsblk
+  102  sudo umount /dev/nodocentral/sitios
+  103  lsblk
+  104  sudo lvremove /dev/nodocentral/sitios
+  105  sudo lvremove /dev/nodocentral/salvas
+  106  lsblk
+  107  sudo vgremove /dev/nodocentral
+  108  sudo pvremove /dev/sdb1 /dev/sdb2 /dev/sdc1 /dev/sdd1
+  109  lsblk
+  110  sudo cfdisk /dev/sdb
+  111  sudo cfdisk /dev/sdc
+  112  sudo cfdisk /dev/sdd
+  113  lsblk
+  114  sudo cfdisk /dev/sdb
+  115  lsblk
+  116  cd
+  117  sudo mkfs /dev/sdb1 /dev/sdb2 /dev/sdb3 /dev/sdb4 /dev/sdb5 /dev/sdb6
+  118  sudo mkfs.ext4 /dev/sdb1 /dev/sdb2 /dev/sdb3 /dev/sdb4 /dev/sdb5 /dev/sdb6
+  119  sudo mkfs.ext4 /dev/sdb1
+  120  sudo mkfs.ext4 /dev/sdb2
+  121  sudo mkfs.ext4 /dev/sdb3
+  122  sudo mkfs.ext4 /dev/sdb4
+  123  sudo mkfs.ext4 /dev/sdb5
+  124  sudo mkfs.ext4 /dev/sdb6
+  125  sudo mkdir -p /mnt/p{1..6}
+  126  tree /mnt
+  127  sudo mount /dev/sdb1 /mnt/p1
+  128  sudo mount /dev/sdb2 /mnt/p2
+  129  sudo mount /dev/sdb3 /mnt/p3
+  130  sudo mount /dev/sdb4 /mnt/p4
+  131  sudo mount /dev/sdb5 /mnt/p5
+  132  sudo mount /dev/sdb6 /mnt/p6
+  133  lsblk
+  134  mkdir TP2
+  135  tree
+  136  cd TP2/
+  137  history > history.txt
